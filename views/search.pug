@@ -7,7 +7,8 @@ block content
 				.thumbnail
 					img(src='', alt='')
 					.caption
-						h3 nombre del grupo
-						p
-							| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quibusdam fuga ea, neque nobis aspernatur, aut laboriosam qui odit tenetur ab autem alias, culpa repudiandae sint dolorem, nemo pariatur velit!
+						each item in data
+							h3=item.band
+								p
+								| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur quibusdam fuga ea, neque nobis aspernatur, aut laboriosam qui odit tenetur ab autem alias, culpa repudiandae sint dolorem, nemo pariatur velit!
 					button.btn.btn-default.navbar-btn(type='button') Detalles

@@ -24,9 +24,9 @@ MongoClient.connect(url, (err, db) => {
 	})
 
 	// app.get('/search', function (req, res) {
- //  		console.log('ok')
  //  		res.render('search')
-	// })
+	// no hce falta porque los datos renderizados se envian desde /api/bands})
+
 
 	/* ------- API ----------------- */
 
@@ -53,8 +53,7 @@ MongoClient.connect(url, (err, db) => {
 		db.collection("bands")
 			.find( filter )
 			.toArray()
-			.then( data => res.json(data))
-			
+			.then( data => res.render('search', {data}))
 			
 	})
 

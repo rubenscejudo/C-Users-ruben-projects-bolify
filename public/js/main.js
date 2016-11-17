@@ -3,6 +3,7 @@
 
 $("#searchBand").on('click', function(event) {
 	event.preventDefault();
+
 	const province =  $("#searchProvince").val();
 	const provinceLowCase = province.toLowerCase();
 	const style =  $("#searchStyle").val();
@@ -17,15 +18,20 @@ $("#searchBand").on('click', function(event) {
 
 		}
 	})
-
+	
 });
 
+$(document).ready(function () {
+    $("#searchBand").click(function () {
+    window.location.replace("/search"); 
+ 	})
+ })
 
 
 // -----------------redirect from index to search-----------------
 
 /*$(document).ready(function () {
-    $("#searchButton").click(function () {
+    $("#searchBand").click(function () {
     window.location.replace("/search"); 
  	})
  })
