@@ -34,16 +34,11 @@ MongoClient.connect(url, (err, db) => {
   		res.render('search')
 	})
 
-	// /bands?province=murcia&style=rock
-	// /bands?province=murcia
-	// /bands?style=rock
-	// /bands
-
 	app.get('/api/bands', function (req, res) {
 		
 		const province = req.query.province;
 		const style = req.query.style;
-
+ 
 		let filter = {};
 
 		if (province) {
@@ -64,48 +59,6 @@ MongoClient.connect(url, (err, db) => {
 			.toArray()
 			.then( data => res.json(data))
 			
-	})
-
-
-
-
-
-	app.get('/province/:province', function (req, res) {
-		
-		const myProvince = req.params.province;
-
-		db.collection("bands")
-			.find({ 
-				provinces_play: {
-					$in : [ myProvince ]     
-				}         
-			})
-			.toArray()
-			.then( dataFilteredByProvince => {
-				res.status(200).json( dataFilteredByProvince)
-				console.log("!!!!! " + dataFilteredByProvince[1].band)
-			}) 
-
-		
-
- // db.bands.find({ provinces_play:  {  $in : [ "Barcelona" ]     }         }).count()
-	})
-
-	app.get('/style/:style', function (req, res) {
-		
-		const myStyle = req.params.style;
-
-		db.collection("bands")
-			.find({ 
-				style: {
-					$in : [ myStyle ]     
-				}         
-			})
-			.toArray()
-			.then( dataFilteredByStyle => {
-				res.status(200).json( dataFilteredByStyle )
-			})
-
 	})
 
 	app.get('/contact', function (req, res) {
