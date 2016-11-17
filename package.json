@@ -1,0 +1,23 @@
+{
+  "name": "bolofy",
+  "version": "1.0.0",
+  "description": "Bolofy is a web thought to connect bands with locals' owners or individuals.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rubenscejudo/C-Users-ruben-projects-bolify.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rubenscejudo/C-Users-ruben-projects-bolify/issues"
+  },
+  "homepage": "https://github.com/rubenscejudo/C-Users-ruben-projects-bolify#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongodb": "^2.2.11"
+  }
+}

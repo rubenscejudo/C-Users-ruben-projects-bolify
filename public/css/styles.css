@@ -1,0 +1,50 @@
+
+.navbar {
+	margin-bottom: -10px;
+	background-color: #000000;
+}
+
+.btn-sing{
+	margin-right: 15px;
+}
+
+
+.mainBody {
+	background-image: url("/img/escenario.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	width: 100%;
+	height: 100%;
+	position:absolute;
+}
+
+.searchForm {
+	margin-top: 40vh;
+}
+
+
+.searchBody {
+	background-image: url("/img/searchbackground.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	width: 100%;
+	height: 100%;
+	position:absolute;
+}
+
+.contactBody {
+	background-image: url("/img/searchbackground.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	width: 100%;
+	height: 100%;
+	position:absolute;
+
+}
+
+#artistSearch {
+ background:rgba(0,0,0,0.2);
+}
