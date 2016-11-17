@@ -15,24 +15,20 @@ MongoClient.connect(url, (err, db) => {
 	if (err) throw err;
 	console.log("Connected to DB...")
 
-	app.get('/index', function (req, res) {
-	
-		db.collection('bands')
-		.find( )
-		.toArray()
-		.then((data)=>{console.log(data)})
-  		
+	app.get('/', function (req, res) {
   		res.render('index')
-
 	})
 
-
-
-	app.get('/search', function (req, res) {
-
-  		console.log('ok')
-  		res.render('search')
+	app.get('/contact', function (req, res) {
+  		res.render('contact')
 	})
+
+	// app.get('/search', function (req, res) {
+ //  		console.log('ok')
+ //  		res.render('search')
+	// })
+
+	/* ------- API ----------------- */
 
 	app.get('/api/bands', function (req, res) {
 		
@@ -59,12 +55,10 @@ MongoClient.connect(url, (err, db) => {
 			.toArray()
 			.then( data => res.json(data))
 			
+			
 	})
 
-	app.get('/contact', function (req, res) {
-  		
-  		res.render('contact')
-	})
+
 
 })
 
