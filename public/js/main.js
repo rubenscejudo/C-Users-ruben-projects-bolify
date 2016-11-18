@@ -1,7 +1,11 @@
 // -------------search from index --------------------------------
 
+/*
 
-$("#searchBand").on('click', function(event) {
+Con post no es necesario hacer una peticion ajax 
+
+$("#searchBand").click(function (event) {	
+
 	event.preventDefault();
 
 	const province =  $("#searchProvince").val();
@@ -10,23 +14,21 @@ $("#searchBand").on('click', function(event) {
 	const styleLowCase = style.toLowerCase();
 
 	$.ajax ({
-		url: '/api/bands?' + 'province'+provinceLowCase+'&'+'style='+styleLowCase,
-		type: 'get',
+		url: '/api/bands?' + 'province='+provinceLowCase+'&'+'style='+styleLowCase,
+		type: 'POST',
 		dataType: 'json',
 		success: function(data) {
 			console.log(data);
 
 		}
 	})
-	
-});
-
-$(document).ready(function () {
-    $("#searchBand").click(function () {
-    window.location.replace("/search"); 
+	.done(function(){
+    window.location.replace('/search'); 
  	})
- })
+	
+})
 
+*/
 
 // -----------------redirect from index to search-----------------
 

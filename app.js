@@ -5,7 +5,9 @@ const MongoClient = require('mongodb').MongoClient;
 const app = express()
 const PORT = 3000;
 const url = "mongodb://localhost:27017/bolofy"
+const bodyParser = require('body-parser');
 
+app.use(bodyParser.json()); 
 app.set('view engine', 'pug')
 app.use( express.static('public') )
 app.use( bodyparser.urlencoded({ extended: false }) )
@@ -23,14 +25,43 @@ MongoClient.connect(url, (err, db) => {
   		res.render('contact')
 	})
 
-	// app.get('/search', function (req, res) {
- //  		res.render('search')
-	// no hce falta porque los datos renderizados se envian desde /api/bands})
+	
+/*	------------POST------------------
+*/
 
+app.post('/bands', function (req, res) {
+		
+		const province = req.body.province;
+		const style = req.body.style;
+ 		
+		console.log(province)
+		console.log(style)
+
+		let filter = {};
+
+		if (province) {
+			filter.provinces_play = {
+				$in : [ province ]     
+			}         
+		}
+
+		if (style) {
+			filter.style = {
+				$in : [ style ]     
+			}         
+		}
+
+		db.collection("bands")
+			.find( filter )
+			.toArray()
+			.then( data => res.render('results', {data}))
+		
+
+});
 
 	/* ------- API ----------------- */
 
-	app.get('/api/bands', function (req, res) {
+	/*app.get('/api/bands', function (req, res) {
 		
 		const province = req.query.province;
 		const style = req.query.style;
@@ -50,15 +81,13 @@ MongoClient.connect(url, (err, db) => {
 		}
 
 
+
+		console.log(filter);
 		db.collection("bands")
 			.find( filter )
 			.toArray()
 			.then( data => res.render('search', {data}))
-			
-	})
 
-
-
+	})*/
 })
-
 app.listen(PORT, () => console.log(`Listening on port ${PORT}...`) ) 

@@ -1,0 +1,24 @@
+extends layout
+
+block content
+	//- .container.searchBody
+	//- 	.row
+	//- 		.col-sm-6.col-md-4
+	//- 			each item in data
+	//- 				.thumbnail
+	//- 					img(src='img/amplifier.jpg', alt='')
+	//- 					.caption
+	//- 						div
+	//- 							h3=item.band
+	//- 							p=item.description
+	//- 							button.btn.btn-default.navbar-btn(type='button') Detalles
+
+	.container
+		.gallery
+			each item in data
+				.item
+					img(src='img/amplifier.jpg')
+					h4.centered=item.band
+						.description
+							p=item.description
+					button.btn.btn-default.navbar-btn(type='button') Detalles
