@@ -10,7 +10,9 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json()); 
 app.set('view engine', 'pug')
 app.use( express.static('public') )
+
 app.use( bodyparser.urlencoded({ extended: false }) )
+app.use( bodyParser.json() )
 
 MongoClient.connect(url, (err, db) => {
 
@@ -65,11 +67,15 @@ MongoClient.connect(url, (err, db) => {
 
 	app.post('/formband', function (req,res){
 
+		debugger;
+
 		const band = req.body.band;
-		const name = req.body.name;
-		console.log(name);
+		/*const name = req.body.name;
 		const surname = req.body.surname;
 		const role = req.body.role;
+*/
+		const members = req.body.members;
+
 		let style = req.body.style;
 		style = style.split(",");
 		let provinces_play = req.body.provinces_play;
@@ -78,7 +84,7 @@ MongoClient.connect(url, (err, db) => {
 
 		const newBand = {
 			band : band,
-			members : [{name : name, surname : surname, role : role}],
+			members : members,
 			style : style,
 			provinces_play : provinces_play,
 			description : description

@@ -1,27 +1,49 @@
 $(document).ready(function() {
+ 
+    var $insertMembers = $("#insertMembers"); //ID container
+    var $containerMembers = $insertMembers.parent() //ID contain
+    var $addButton = $("#addMember"); //ID addButton
+ 
+     //var filds = number of fields in div
+     //var fields = $("#insertMembers div").length + 1;
+     //var FieldCount = fields; 
+ 
+ 	var mainBlock = 
+ 	var counter = 0;
+    $addButton.on("click", function () {
 
-    var insertMembers = $("#insertMembers"); //ID container
-    var addButton = $("#addMember"); //ID addButton
+    	var $blockToClone = $insertMembers.clone();
+    	$blockToClone.removeAttr("id")//#generalMembers will be removed. When cloning it will clone one by one instead of 2, 4, 6...
+    	$blockToClone.find("input").each( function() {
 
-  
-    $(addButton).click(function (e) {
-    		e.preventDefault()
-   
-            $('#insertMembers').clone().appendTo(insertMembers);
-    
-         
-           
-        return false;
-    });
 
-    $("body").on("click",".delete", function(e){ //click delete field
-        if( fields > 1 ) {
-            $(this).parent('div').remove(); //delete field
-            fields--;
-        }
-        return false;
-    });
-});
+
+    	} )
+
+
+
+
+    	
+    	.appendTo("#generalMembers")
+             FieldCount++;
+             $(insertMembers).append('<div><input type="text" name="name" id="fieldName_'+ FieldCount + '"/><input type="text" name="surname" id="fieldSurname_'+ FieldCount + '"/><input type="text" name="role" id="fieldRole_'+ FieldCount + '"/><a href="#" class="delete">&times;</a></div>');
+             // $(insertMembers).append('<div><input type="text" name="surname[]" id="fieldSurname_'+ FieldCount +'" placeholder="Knopfler'+ FieldCount'"/><a href="#" class="delete">&times;</a></div>');
+             // $(insertMembers).append('<div><input type="text" name="role[]" id="fieldRole_'+ FieldCount +'" placeholder="Guitarrista y cantante'+ FieldCount'"/><a href="#" class="delete">&times;</a></div>');
+             fields++; 
+             // debugger;
+
+
+         return false;
+     });
+ 
+     $("body").on("click",".delete", function(e){ //click delete field
+         if( fields > 1 ) {
+             $(this).parent('div').remove(); //delete field
+             fields--;
+         }
+         return false;
+     });
+ });;
 
 
 /*---------------------read more/in search------------------*/

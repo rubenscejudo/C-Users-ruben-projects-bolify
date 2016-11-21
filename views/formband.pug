@@ -17,17 +17,18 @@ block content
 							br
 							input#bandImgFile(type='file')
 							#progress-container
-					.row.bandMembers#insertMembers
-						.col-md-4
-							label.control-label(for='memberName') Nombre:
-								input.form-control#fieldName_1(type='text', name='name', placeholder='Mark')
-								a.delete(href='#') 
-						.col-md-4
-							label.control-label(for='memberSurname') Apellido:
-							input.form-control#fieldSurname_1(type='text',name='surname', placeholder='Knopfler')
-						.col-md-4
-							label.control-label(for='memberRole') Role:
-							input.form-control#fieldRole_1(type='text', name='role', placeholder='Guitarrista y cantante')
+					#generalMembers
+						.row.bandMembers#insertMembers
+							.col-md-4
+								label.control-label(for='memberName') Nombre:
+									input.form-control#fieldName_1(type='text', name='name_member', placeholder='Mark')
+									a.delete(href='#') 
+							.col-md-4
+								label.control-label(for='memberSurname') Apellido:
+								input.form-control#fieldSurname_1(type='text',name='surname_member', placeholder='Knopfler')
+							.col-md-4
+								label.control-label(for='memberRole') Role:
+								input.form-control#fieldRole_1(type='text', name='role_member', placeholder='Guitarrista y cantante')
 						//- .col-md-3
 						//- 	label.control-label(for='image') Foto perfil:
 						//- 	#photo-container
