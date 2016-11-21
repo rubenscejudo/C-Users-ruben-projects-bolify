@@ -19,6 +19,11 @@ block content
 				.item
 					img(src='img/amplifier.jpg')
 					h4.centered=item.band
-						.description
+					input#more-button(type='button', onclick='growDiv()', value='Read more')
+					#grow
+						.description.measuringWrapper
 							p=item.description
 					button.btn.btn-default.navbar-btn(type='button') Detalles
+
+
+			

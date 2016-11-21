@@ -1,8 +1,23 @@
-nav.navbar.container-fluid
-	.container
-		ul.navbar-header
-			a.navbar-brand(href='#')
-				img(alt='Brand', src='')
-		ul.navbar-right
-			button.btn.btn-default.navbar-btn.btn-sing(type='button') Sign up
-			button.btn.btn-default.navbar-btn.btn-login(type='button') Login
+//- nav.navbar.container-fluid
+//- 	.container
+//- 		ul.navbar-header
+//- 			a.navbar-brand(href='#')
+//- 				img(alt='Brand', src='')
+//- 		ul.navbar-right
+//- 			button.btn.btn-default.navbar-btn.btn-sing(type='button') Sign up
+//- 			button.btn.btn-default.navbar-btn.btn-login(type='button') Login
+
+nav.navbar.navbar-inverse
+	.container-fluid
+		.navbar-header
+			a(href='/')
+				img.logo(height='50', width='50', src='img/logo.jpg')
+		#bs-navbar-collapse.collapse.navbar-collapse
+			ul.nav.navbar-nav.navbar
+				li
+					a(href='/') Home
+			ul.nav.navbar-nav.navbar-right
+				li
+					a(href='/signup') Sign up
+				li
+					a(href='/login') Login

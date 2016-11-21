@@ -21,6 +21,10 @@ MongoClient.connect(url, (err, db) => {
   		res.render('index')
 	})
 
+	app.get('/formband', function(req, res){
+		res.render('formband')
+	})
+
 	app.get('/contact', function (req, res) {
   		res.render('contact')
 	})
@@ -29,65 +33,47 @@ MongoClient.connect(url, (err, db) => {
 /*	------------POST------------------
 */
 
-app.post('/bands', function (req, res) {
+	app.post('/bands', function (req, res) {
+			
+			const province = req.body.province;
+			const style = req.body.style;
+	 		
+			console.log(province)
+			console.log(style)
+
+			let filter = {};
+
+			if (province) {
+				filter.provinces_play = {
+					$in : [ province ]     
+				}         
+			}
+
+			if (style) {
+				filter.style = {
+					$in : [ style ]     
+				}         
+			}
+
+			db.collection("bands")
+				.find( filter )
+				.toArray()
+				.then( data => res.render('results', {data}))
+			
+
+	});
+
+	app.post('/formband', function (req,res){
+
+		const newBand = req.body;
 		
-		const province = req.body.province;
-		const style = req.body.style;
- 		
-		console.log(province)
-		console.log(style)
-
-		let filter = {};
-
-		if (province) {
-			filter.provinces_play = {
-				$in : [ province ]     
-			}         
-		}
-
-		if (style) {
-			filter.style = {
-				$in : [ style ]     
-			}         
-		}
-
+		console.log(newBand)
+	
 		db.collection("bands")
-			.find( filter )
-			.toArray()
-			.then( data => res.render('results', {data}))
-		
+			.insert(newBand)
+			.then( data => res.redirect('formband'))
+					
+	});
 
-});
-
-	/* ------- API ----------------- */
-
-	/*app.get('/api/bands', function (req, res) {
-		
-		const province = req.query.province;
-		const style = req.query.style;
- 
-		let filter = {};
-
-		if (province) {
-			filter.provinces_play = {
-				$in : [ province ]     
-			}         
-		}
-
-		if (style) {
-			filter.style = {
-				$in : [ style ]     
-			}         
-		}
-
-
-
-		console.log(filter);
-		db.collection("bands")
-			.find( filter )
-			.toArray()
-			.then( data => res.render('search', {data}))
-
-	})*/
 })
 app.listen(PORT, () => console.log(`Listening on port ${PORT}...`) ) 

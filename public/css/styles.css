@@ -4,6 +4,15 @@
 	background-color: #000000;
 }
 
+#bs-navbar-collapse {
+	padding: 2px;
+}
+
+.logo {
+	max-height: 50px;
+	max-width:  50px;
+}
+
 .btn-sing{
 	margin-right: 15px;
 }
@@ -71,4 +80,48 @@ img {
   display: block;
   width: 100%;
   border-radius: 10px;
+}
+
+/*--------read more---------------*/
+
+#more-button{border-style:none;background:none;font:16px Serif;color:blue;margin: 0 0 10px 0;}
+
+#grow input:checked{color:red;}
+
+#more-button:hover{color:black;}
+
+#grow {
+    -moz-transition: height .5s;
+    -ms-transition: height .5s;
+    -o-transition: height .5s;
+    -webkit-transition: height .5s;
+    transition: height .5s;
+    height: 0;
+    overflow: hidden;
+  }
+/*
+---------------formgroup------------------------------*/
+
+h3.createBand {
+	margin-top: 30px;
+}
+
+.row.bandName {
+	margin-top: 10px;
+}
+
+.row.bandStyle {
+	margin-top: 10px;
+}
+
+.row.bandProvinceToPlay {
+	margin-top: 10px;
+}
+
+.row.descriptionRow {
+	margin-top: 10px;	
+}
+
+.row.submitBotton {
+	margin-top: 10px;	
 }
