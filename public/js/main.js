@@ -3,18 +3,14 @@ $(document).ready(function() {
     var insertMembers = $("#insertMembers"); //ID container
     var addButton = $("#addMember"); //ID addButton
 
-    //var filds = number of fields in div
-    var fields = $("#insertMembers div").length + 1;
-    var FieldCount = fields; 
-
+  
     $(addButton).click(function (e) {
+    		e.preventDefault()
+   
+            $('#insertMembers').clone().appendTo(insertMembers);
     
-            FieldCount++;
-            $(insertMembers).append('<div><input type="text" name="name" id="fieldName_'+ FieldCount + '"/><input type="text" name="surname" id="fieldSurname_'+ FieldCount + '"/><input type="text" name="role" id="fieldRole_'+ FieldCount + '"/><a href="#" class="delete">&times;</a></div>');
-            // $(insertMembers).append('<div><input type="text" name="surname[]" id="fieldSurname_'+ FieldCount +'" placeholder="Knopfler'+ FieldCount'"/><a href="#" class="delete">&times;</a></div>');
-            // $(insertMembers).append('<div><input type="text" name="role[]" id="fieldRole_'+ FieldCount +'" placeholder="Guitarrista y cantante'+ FieldCount'"/><a href="#" class="delete">&times;</a></div>');
-            fields++; 
-            // debugger;
+         
+           
         return false;
     });
 

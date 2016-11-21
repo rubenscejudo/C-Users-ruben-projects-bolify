@@ -65,7 +65,24 @@ MongoClient.connect(url, (err, db) => {
 
 	app.post('/formband', function (req,res){
 
-		const newBand = req.body;
+		const band = req.body.band;
+		const name = req.body.name;
+		console.log(name);
+		const surname = req.body.surname;
+		const role = req.body.role;
+		let style = req.body.style;
+		style = style.split(",");
+		let provinces_play = req.body.provinces_play;
+		provinces_play = provinces_play.split(",");
+		const description = req.body.description;
+
+		const newBand = {
+			band : band,
+			members : [{name : name, surname : surname, role : role}],
+			style : style,
+			provinces_play : provinces_play,
+			description : description
+		};
 		
 		console.log(newBand)
 	
