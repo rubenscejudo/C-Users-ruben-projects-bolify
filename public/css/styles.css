@@ -58,6 +58,28 @@
  background:rgba(0,0,0,0.2);
 }
 
+#searchStyle {
+	background: rgba(74, 67, 67, 0.29);
+
+}
+
+#searchProvince {
+	background: rgba(74, 67, 67, 0.29);
+}
+
+.btn {
+	background: rgba(74, 67, 67, 0.29);
+	padding-top: 6px;
+    padding-right: 54px;
+    padding-bottom: 6px;
+    padding-left: 54px;
+    
+}
+
+.btn-primary {
+    color: #fff;
+    border-color: #fff;
+}
 /*-------------------results page-------------------*/
 .gallery {
   display: flex;

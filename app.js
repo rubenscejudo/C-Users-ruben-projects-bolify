@@ -67,14 +67,25 @@ MongoClient.connect(url, (err, db) => {
 
 	app.post('/formband', function (req,res){
 
-		debugger;
+		
 
 		const band = req.body.band;
-		/*const name = req.body.name;
-		const surname = req.body.surname;
-		const role = req.body.role;
+
+		/*for (var i = 0; i<2; i++) {
+		var members = []
+
+		let name = req.body.name_member +i;
+		let surname = req.body.surname_member +i;
+		let role = req.body.role_member+i;
+
+		var member = {name : name, surname : surname, role: role}
+
+		members.push(member)
+		console.log(members);
+		}
 */
-		const members = req.body.members;
+	
+
 
 		let style = req.body.style;
 		style = style.split(",");
@@ -84,7 +95,7 @@ MongoClient.connect(url, (err, db) => {
 
 		const newBand = {
 			band : band,
-			members : members,
+			members :{name : name, surname :surname, role : role},
 			style : style,
 			provinces_play : provinces_play,
 			description : description
