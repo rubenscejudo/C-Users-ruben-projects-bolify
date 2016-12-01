@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
 
-<!-- 
+<!--
   <base href="http://localhost:8080"> -->
 </head>
 
@@ -22,14 +22,13 @@
 
            <div id="bs-navbar-collapse" class="collapse navbar-collapse">
              <div class="col-xs-12 col-md-6">
-               <a class="navbar-brand logo" href="#">BOLO<span class="corporative-color">FY</span></a>
+               <a class="navbar-brand logo" href="#/">BOLO<span class="corporative-color">FY</span></a>
              </div>
              <ul class="nav navbar-nav navbar-right">
-              <li><a href="/">Inicio</a></li>
-              <li><a href="/results">Resultados</a></li>
-
-              <li><a href="/login">Acceso</a></li>
-              <li><a href="/signup">Regístrate</a></li>
+              <li><a href="#/">Inicio</a></li>
+              <li><a href="#/results">Resultados</a></li>
+              <li><a href="#/create">Añadir Banda</a></li>
+              <!-- <li><a href="/signup">Regístrate</a></li> -->
             </ul>
           </div>
         </div>
@@ -38,7 +37,7 @@
 
   </header>
   <main>
-    <div class="container">
+    <div class="container mainBody">
       <div ng-view></div>
 
     </div>
@@ -48,9 +47,15 @@
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
   <script src='https://code.jquery.com/jquery-2.0.3.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  
+
   <script src="js/app.js"></script>
-  <script src='js/controller.js'></script>
+
+  <script src="js/controllers/index.js"></script>
+  <script src="js/controllers/detailsController.js"></script>
+  <script src="js/controllers/resultsController.js"></script>
+  <script src="js/controllers/searchController.js"></script>
+  <script src="js/controllers/createController.js"></script>
+
   <script src='js/service.js'></script>
 </body>
 </html>

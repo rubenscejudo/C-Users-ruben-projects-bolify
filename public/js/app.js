@@ -1,6 +1,6 @@
 angular.module('FindABandApp', ['ngRoute', 'bandControllers', 'bandServices'])
 	.config( function($routeProvider){
-		
+
 		//$locationProvider.html5Mode(true);
 
 		$routeProvider
@@ -12,17 +12,16 @@ angular.module('FindABandApp', ['ngRoute', 'bandControllers', 'bandServices'])
 				templateUrl: 'views/results.html',
 				controller: 'resultsController'
 			})
-
 			.when('/details', {
 				templateUrl: 'views/details.html',
 				controller: 'detailsController'
 			})
-			/*.when('/create', {
+			.when('/create', {
 				templateUrl: 'views/create.html',
 				controller: 'createController'
-			})*/
+			})
 			.otherwise({redirectTo: '/'});
 
-})			
+})
 
 

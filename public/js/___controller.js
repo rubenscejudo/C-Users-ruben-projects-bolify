@@ -1,35 +1,39 @@
 angular.module('bandControllers', ['bandServices'])
-	.controller('searchController', function($scope, $rootScope, spotifyService,$location) {
+	.controller('searchController', function($scope, $rootScope, DataService,$location) {
 
 		$scope.findArtist = function() {
-			var artist = $scope.artistQuery;
-			spotifyService.getArtists(artist)
+			const province = $scope.province;
+			const style = $scope.style;
+			DataService.getBands( province, style )
 				.then( function(response) {
-					//console.log(response)
+					console.log(response)
 					//console.log(response.data.artists.items)
-					$rootScope.dataArtists = response.data.artists.items;
+					debugger;
+					$rootScope.bands = response.data;
 					$location.path('/results')
 				})
 		}
 
 	})
-	.controller('resultsController', function($scope, $rootScope, spotifyService, $location) {	
+	.controller('resultsController', function($scope, $rootScope, DataService, $location) {
+
+		debugger;
 		//$scope.artists= $rootScope.dataArtists;
 
-		$scope.getArtistInfo = function(artist) {
-			var id = artist.id
-				console.log("ID" + id)
-			spotifyService.getAlbums( id ) 
-				.then (function(response) {	
-					//console.log(response)
-				$rootScope.album = response.data.items;
-				$location.path('/details')
-					//console.log($rootScope.album)
-				})			
+		// $scope.getArtistInfo = function(artist) {
+		// 	var id = artist.id
+		// 		console.log("ID" + id)
+		// 	spotifyService.getAlbums( id )
+		// 		.then (function(response) {
+		// 			//console.log(response)
+		// 		$rootScope.album = response.data.items;
+		// 		$location.path('/details')
+		// 			//console.log($rootScope.album)
+		// 		})
 
-		}
+		// }
 
-		
+
 	})
 	.controller('detailsController', function($scope, $rootScope, spotifyService, $location){
 		$scope.albums = $rootScope.album;

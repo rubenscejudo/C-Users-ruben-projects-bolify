@@ -1,0 +1,60 @@
+<h3 class="createBand">Crear banda</h3>
+<form action="/bands" method="POST" role="form" class="form-group" ng-submit="addBand(); $event.preventDefault()">
+  <div class="form-group">
+    <div class="col-md-10">
+      <div class="row bandName">
+        <div class="col-md-8">
+          <label for="bandName" class="control-label">Banda:</label>
+          <input type="text" ng-model="band" placeholder="Nombre de la banda" class="form-control"/>
+        </div>
+        <!-- <div class="col-md-4">
+          <label for="image" class="control-label">Imagen:</label>
+          <div id="photo-container"><img id="bandPhoto" src=""/></div><br/>
+          <input id="bandImgFile" type="file"/>
+          <div id="progress-container"></div>
+        </div> -->
+      </div>
+     <!--  <div id="generalMembers">
+        <div id="insertMembers" class="row bandMembers">
+          <div class="col-md-4">
+            <label for="memberName" class="control-label">Nombre:
+              <input type="text" name="name_member_" placeholder="Mark" class="form-control fieldMembers"/><a href="#" class="delete"> </a>
+            </label>
+          </div>
+          <div class="col-md-4">
+            <label for="memberSurname" class="control-label">Apellido:</label>
+            <input type="text" name="surname_member_" placeholder="Knopfler" class="form-control fieldMembers"/>
+          </div>
+          <div class="col-md-4">
+            <label for="memberRole" class="control-label">Role:</label>
+            <input type="text" name="role_member_" placeholder="Guitarrista y cantante" class="form-control fieldMembers"/>
+          </div>
+        </div>
+      </div>
+      <button id="addMember" class="btn">Añadir </button> -->
+      <div class="row bandStyle">
+        <div class="col-md-8">
+          <label for="bandStyle" class="control-label">Estilo:</label>
+          <input type="text" ng-model="style" placeholder="Estilo de música" class="form-control"/>
+        </div>
+      </div>
+      <div class="row bandProvinceToPlay">
+        <div class="col-md-12">
+          <label for="provincesToPlay" class="control-label">Provincia:</label>
+          <input type="text" ng-model="provinces_play" placeholder="Provincias en la que estáis disponibles para tocar" class="form-control"/>
+        </div>
+      </div>
+      <div class="row descriptionRow">
+        <div class="col-md-12">
+          <label for="input" class="control-label">Descripción:</label>
+          <textarea placeholder="" ng-model="description" rows="3" class="form-control"></textarea>
+        </div>
+      </div>
+      <div class="row submitBotton">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-primary">Crear banda</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
