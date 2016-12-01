@@ -1,0 +1,7 @@
+<div class="container" ng-repeat="artist in artists">
+  <div id="artist">
+    <img src="{{artist.images[0].url}}" alt="" style="width:200px; height: 200px;">
+    <h3 >{{artist.name}}</h3>
+    <button ng-click="getArtistInfo(artist)">Detalle</button>
+  </div>
+</div>

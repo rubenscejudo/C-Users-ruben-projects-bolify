@@ -11,7 +11,8 @@ $(document).ready(function() {
 		$blockToClone.find('input').each( function(index,elem) {
      		$elem = $(elem)
      		var name = $elem.attr('name')
-     		$elem.attr('name', name + '_' + counter)
+     		$elem.attr('name', name + counter)
+
 
      	} )
 		
@@ -21,20 +22,19 @@ $(document).ready(function() {
     	$('#generalMembers').append($blockToClone)
     	
 	});
-
-
 });
 
 
 
+
 /*---------------------read more/in search------------------*/
-// function growDiv() {
-// 	var growDiv = document.getElementById('grow');
-// 	if (growDiv.clientHeight) {
-// 	  growDiv.style.height = 0;
-// 	} else {
-// 	  var wrapper = document.querySelector('.measuringWrapper');
-// 	  growDiv.style.height = wrapper.clientHeight + "px";
-// 	}
-// document.getElementById("more-button").value=document.getElementById("more-button").value=='Read more'?'Read less':'Read more';
-// }
+function growDiv() {
+	var growDiv = document.getElementById('grow');
+	if (growDiv.clientHeight) {
+	  growDiv.style.height = 0;
+	} else {
+	  var wrapper = document.querySelector('.measuringWrapper');
+	  growDiv.style.height = wrapper.clientHeight + "px";
+	}
+document.getElementById("more-button").value=document.getElementById("more-button").value=='Read more'?'Read less':'Read more';
+}

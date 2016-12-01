@@ -17,97 +17,113 @@ app.use( bodyParser.json() )
 MongoClient.connect(url, (err, db) => {
 
 	if (err) throw err;
-	console.log("Connected to DB...")
+	// console.log("Connected to DB...")
 
-	app.get('/', function (req, res) {
-  		res.render('index')
-	})
+	// app.get('/', function (req, res) {
+	// 	res.render('index')
+	// })
 
-	app.get('/formband', function(req, res){
-		res.render('formband')
-	})
+	// app.get('/formband', function(req, res){
+	// 	res.render('formband')
+	// })
 
-	app.get('/contact', function (req, res) {
-  		res.render('contact')
+	// app.get('/contact', function (req, res) {
+	// 	res.render('contact')
 	})
 
 	
 /*	------------POST------------------
 */
 
-	app.post('/bands', function (req, res) {
-			
-			const province = req.body.province;
-			const style = req.body.style;
-	 		
-			console.log(province)
-			console.log(style)
+app.post('/bands', function (req, res) {
 
-			let filter = {};
+	const province = req.body.province;
+	const style = req.body.style;
 
-			if (province) {
-				filter.provinces_play = {
-					$in : [ province ]     
-				}         
-			}
+	console.log(province)
+	console.log(style)
 
-			if (style) {
-				filter.style = {
-					$in : [ style ]     
-				}         
-			}
+	let filter = {};
 
-			db.collection("bands")
-				.find( filter )
-				.toArray()
-				.then( data => res.render('results', {data}))
-			
+	if (province) {
+		filter.provinces_play = {
+			$in : [ province ]     
+		}         
+	}
 
-	});
+	if (style) {
+		filter.style = {
+			$in : [ style ]     
+		}         
+	}
 
-	app.post('/formband', function (req,res){
+	db.collection("bands")
+	.find( filter )
+	.toArray()
+	.then( data => res.render('results', {data}))
 
-		
 
-		const band = req.body.band;
+});
 
-		/*for (var i = 0; i<2; i++) {
+app.post('/formband', function (req,res){
+
+
+
+	const band = req.body.band;
+
+	for (var i = 0; i<4; i++) {
 		var members = []
+		if (i==0) {
+			let name = req.body.name_member_;
+			let surname = req.body.surname_member_;
+			let role = req.body.role_member_;
 
-		let name = req.body.name_member +i;
-		let surname = req.body.surname_member +i;
-		let role = req.body.role_member+i;
+			var member = {name : name, surname : surname, role: role}
 
-		var member = {name : name, surname : surname, role: role}
 
-		members.push(member)
-		console.log(members);
+			members.push(member)
 		}
-*/
+		else{
+			
+			let name = req.body.name_member_  + i;
+			let surname = req.body.surname_member_ + i;
+			let role = req.body.role_member_ + i ;
+
+			console.log(req.body.name_member_  + i)
+			var member = {name : name, surname : surname, role: role}
+
+
+			members.push(member)
+
+
+		}
+
+		console.log(members)
+	}
+
 	
-
-
-		let style = req.body.style;
-		style = style.split(",");
-		let provinces_play = req.body.provinces_play;
-		provinces_play = provinces_play.split(",");
-		const description = req.body.description;
-
-		const newBand = {
-			band : band,
-			members :{name : name, surname :surname, role : role},
-			style : style,
-			provinces_play : provinces_play,
-			description : description
-		};
-		
-		console.log(newBand)
 	
-		db.collection("bands")
-			.insert(newBand)
-			.then( data => res.redirect('formband'))
-					
-	});
+	let style = req.body.style;
+	style = style.split(",");
+	let provinces_play = req.body.provinces_play;
+	provinces_play = provinces_play.split(",");
+	const description = req.body.description;
+
+	const newBand = {
+		band : band,
+		members : members,
+		style : style,
+		provinces_play : provinces_play,
+		description : description
+	};
+
+	console.log(newBand)
+	
+	db.collection("bands")
+	.insert(newBand)
+	.then( data => res.redirect('formband'))
+
+});
 
 })
 app.listen(PORT, () => console.log(`Listening on port ${PORT}...`) ) 
