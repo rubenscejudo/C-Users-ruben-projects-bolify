@@ -14,13 +14,13 @@ angular.module('FindABandApp', ['ngRoute', 'bandControllers', 'bandServices'])
 			})
 			.when('/details', {
 				templateUrl: 'views/details.html',
-				controller: 'detailsController'
+				/*controller: 'detailsController'*/
 			})
-			.when('/create', {
+			/*.when('/create', {
 				templateUrl: 'views/create.html',
 				controller: 'createController'
-			})
-			.otherwise({redirectTo: '/'});
+			})*/
+			.otherwise({redirectTo: '/'})
 
 })
 

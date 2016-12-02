@@ -1,14 +1,16 @@
 <div class="container">
-  <div id="albums" ng-repeat="album in albums" style="margin-top:150px;">
-    <img src="{{album.images[0].url}}" alt="" style="width:200px; height: 200px;">
-    <h3 >{{album.name}}</h3>
-    <button type="button" class="btn btn-default" ng-click="findTracks(album)">button</button>
-  </div>
-  <div class="form-group">
-        <h2>Tracks</h2>
-        <ul>
-          <li ng-repeat="track in tracks" href="track.preview_url">{{ track.name }}</li>
-        </ul>
-      </div>
+	<div class="container" ng-repeat=" detail in detailsBand">
+   
+    <h3 >{{detail.band}}</h3>
+    <p>Estilo: {{detail.style.join(", ")}}</p>
+    <p>Provincia: {{detail.provinces_play.join(", ")}}</p>
+    <ul>
+    	<li ng-repeat="detail in detail.members">
+    		<strong>{{ detail.name }}</strong> {{ detail.surname }}
+    	</li>
+    </ul>
+    <p>{{detail.description}}</p>
 
 </div>
+</div>
+

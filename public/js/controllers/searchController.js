@@ -8,7 +8,6 @@ angular.module('bandControllers')
 				.then( function(response) {
 					console.log(response)
 					//console.log(response.data.artists.items)
-					debugger;
 					$rootScope.bands = response.data;
 					$location.path('/results')
 				})

@@ -1,21 +1,16 @@
 angular.module('bandControllers')
 	.controller('resultsController', function($scope, $rootScope, DataService, $location) {
 
-			debugger;
-			//$scope.artists= $rootScope.dataArtists;
+			$scope.getDetails = function(oBand_id) {
 
-			// $scope.getArtistInfo = function(artist) {
-			// 	var id = artist.id
-			// 		console.log("ID" + id)
-			// 	spotifyService.getAlbums( id )
-			// 		.then (function(response) {
-			// 			//console.log(response)
-			// 		$rootScope.album = response.data.items;
-			// 		$location.path('/details')
-			// 			//console.log($rootScope.album)
-			// 		})
+			DataService.getBandByID(oBand_id)
 
-			// }
+				.then(function(response) {
+					console.log(response)
+					$location.path('/details')
+					$rootScope.detailsBand = response.data;
+				})
+		}
 
 
 	})

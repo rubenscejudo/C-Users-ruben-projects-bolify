@@ -25,8 +25,14 @@ angular.module('bandServices', [])
 				return $http.post(url, data);
 			}
 
+			function getBandByID (id) {
+				const url = "/band/" + id;
+				return $http.get(url)
+			}
+
 			return {
 				getBands: getBands,
-				addBand: addBand
+				addBand: addBand,
+				getBandByID: getBandByID
 			}
 	})

@@ -1,14 +1,14 @@
 <div class="container" ng-repeat="oBand in bands">
   <div id="artist">
-    <!-- <img src="{{artist.images[0].url}}" alt="" style="width:200px; height: 200px;"> -->
+    <img src="../../img/porretas" alt="" style="width:200px; height: 200px;">
     <h3 >{{oBand.band}}</h3>
-    <p>Styles: {{oBand.style.join(", ")}}</p>
+    <!-- <p>Styles: {{oBand.style.join(", ")}}</p>
     <p>Provinces to Play: {{oBand.provinces_play.join(", ")}}</p>
 		<ul>
 			<li ng-repeat="member in oBand.members">
 				<strong>{{ member.name }}</strong> {{ member.surname }}
 			</li>
-		</ul>
-    <button ng-click="getArtistInfo(artist)">Detalle</button>
+		</ul> -->
+    <button ng-click="getDetails(oBand._id)">Detalle</button>
   </div>
 </div>
