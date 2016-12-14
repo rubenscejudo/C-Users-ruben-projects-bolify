@@ -10,5 +10,4 @@
 					$rootScope.detailsBand = response.data;
 				})
 		}
-
 	})*/

@@ -9,7 +9,7 @@ angular.module('bandServices', [])
 					url += "?province=" + province + "&style=" + style
 				}
 				else if (province) {
-					url += '?province=' + province
+					url += '?province=' + province.toLowerCase()
 				}
 				else if (style) {
 					url += '?style=' + style.toLowerCase()

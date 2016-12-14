@@ -4,8 +4,8 @@ angular.module('bandControllers')
 		$scope.addBand = function( ) {
 
 			//const band = $scope.band;
-			const { band, description, style, provinces_play } = $scope;
-			const dataToSend = { band, description, style, provinces_play }
+			const { band, style, provinces_play, description, phone, email, listenToUs } = $scope;
+			const dataToSend = { band, style, provinces_play, description, phone, email, listenToUs }
 
 			DataService.addBand(dataToSend)
 				.then(() => console.log("it works!!!"))

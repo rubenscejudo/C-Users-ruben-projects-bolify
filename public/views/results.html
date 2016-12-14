@@ -1,14 +1,13 @@
-<div class="container" ng-repeat="oBand in bands">
-  <div id="artist">
-    <img src="../../img/porretas" alt="" style="width:200px; height: 200px;">
-    <h3 >{{oBand.band}}</h3>
-    <!-- <p>Styles: {{oBand.style.join(", ")}}</p>
-    <p>Provinces to Play: {{oBand.provinces_play.join(", ")}}</p>
-		<ul>
-			<li ng-repeat="member in oBand.members">
-				<strong>{{ member.name }}</strong> {{ member.surname }}
-			</li>
-		</ul> -->
-    <button ng-click="getDetails(oBand._id)">Detalle</button>
+<div class="container">
+  <div class="gallery" >
+    <div id="artist" ng-repeat="oBand in bands">
+      <img src="../../img/porretas.jpg" alt="Band img profile" style="width:200px; height: 200px;">
+
+      <!--<img ng-src="{{oBand.bandImage}}" alt="Band img profile" style="width:200px; height: 200px;">  Ready and waiting for firebase or amazon web services -->
+      
+      <h3 >{{oBand.band}}</h3>
+      
+      <button type="submit" class="btn btn-default" ng-click="getDetails(oBand._id)">Detalles</button>
+    </div>
   </div>
 </div>

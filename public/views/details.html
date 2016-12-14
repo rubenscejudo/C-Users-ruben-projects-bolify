@@ -1,15 +1,26 @@
 <div class="container">
 	<div class="container" ng-repeat=" detail in detailsBand">
    
-    <h3 >{{detail.band}}</h3>
-    <p>Estilo: {{detail.style.join(", ")}}</p>
-    <p>Provincia: {{detail.provinces_play.join(", ")}}</p>
+    <h2>{{detail.band}}</h2>
+    <h5><strong>Estilo: </strong></h5>
+    <p>{{detail.style.join(", ")}}</p>
+    <h5><strong>Provincia: </strong></h5>
+    <p>{{detail.provinces_play.join(", ")}}</p>
+    <h5><strong>Miembros: </strong></h5>
     <ul>
     	<li ng-repeat="detail in detail.members">
-    		<strong>{{ detail.name }}</strong> {{ detail.surname }}
+    		<strong>{{ detail.name }}</strong> {{ detail.surname }} - {{detail.role}}
     	</li>
     </ul>
+    <h5><strong>Descripción</strong></h5>
     <p>{{detail.description}}</p>
+    <h5><strong>Escúchanos: </strong></h5>
+    <p><a href="{{detail.listenToUs}}" target="_blank">Albums</a></p>
+    <h5><strong>Contáctanos:</strong></h5>
+    <h6><strong>Teléfono: </strong></h6><p>{{detail.phone}}</p>
+    <h6><strong>Email: </strong></h6>
+    <p><a href="{{detail.email}}" target="_blank">{{detail.email}}</a></p>
+    
 
 </div>
 </div>
