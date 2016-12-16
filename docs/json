@@ -1,0 +1,82 @@
+[
+{
+"_id": "582b10aa5c2affa4c0d93da5",
+"band": "Porretas",
+"bandImage": "http://img.europapress.net/fotoweb/fotonoticia_20150926110436_1280.jpg",
+"members": [
+{
+"name": "miguel",
+"surname": "martinez",
+"role": "cantante"
+},
+{
+"name": "antonio",
+"surname": "lopez",
+"role": "guitarrista"
+},
+{
+"name": "pedro",
+"surname": "lopez",
+"role": "bajista"
+},
+{
+"name": "juan",
+"surname": "marquez",
+"role": "bateria"
+}
+],
+"style": [
+"rock",
+"rock alternativo"
+],
+"provinces_play": [
+"murcia",
+"granada"
+],
+"description": "Los Porretas son el espíritu de una cultura de barrio que encuentra en la música el mejor o casi el único vehículo de expresión propia, de una forma de vida, de un lenguaje y unas costumbres que ocupan el sustrato más bajo, y por ello tal vez el más sólido, de la vida social española.",
+"phone": "657 278 256",
+"email": "INFO@ASALTOSONORO.COM",
+"listenToUs": "http://porretas.com/albums-2/"
+},
+{
+"_id": "582c23594af57759de1a307b",
+"band": "Lagartija Nick",
+"bandImage": "http://images.coveralia.com/autores/fotos/lagartija-nick13479.jpg",
+"members": [
+{
+"name": "antonio",
+"surname": "arias",
+"role": "cantante"
+},
+{
+"name": "ignacio",
+"surname": "lapido",
+"role": "guitarrista"
+},
+{
+"name": "eric",
+"surname": "jimenez",
+"role": " bateria"
+},
+{
+"name": "miguel",
+"surname": "hernandez",
+"role": "bajista"
+}
+],
+"style": [
+"rock",
+"rock alternativo"
+],
+"provinces_play": [
+"barcelona",
+"granada",
+"malaga",
+"almeria"
+],
+"description": "Somos un grupo español de rock alternativo de la ciudad de Granada que no ha dejado de innovar y de investigar sonidos de otras culturas para reinterpretarlos desde la estettica rock",
+"phone": "657 278 256",
+"email": "lagartijanickband@gmail.com",
+"listenToUs": "https://myspace.com/lagartijanick2010/music/songs"
+}
+]

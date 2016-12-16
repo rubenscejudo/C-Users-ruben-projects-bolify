@@ -1,11 +1,11 @@
 <h3 class="createBand">Crear banda</h3>
-<form action="/bands" method="POST" role="form" class="form-group" ng-submit="addBand()">
+<form action="/bands" ng-controller="createController as createCtrl" class="form-group" ng-submit="createCtrl.addBand(newBand)">
   <div class="form-group">
     <div class="col-md-10">
       <div class="row bandName">
         <div class="col-md-8">
           <label for="bandName" class="control-label">Banda:</label>
-          <input type="text" ng-model="band" placeholder="Nombre de la banda" class="form-control"/>
+          <input type="text" ng-model="createCtrl.band.band" placeholder="Nombre de la banda" class="form-control"/>
         </div>
         <!-- <div class="col-md-4">
           <label for="image" class="control-label">Imagen:</label>
@@ -35,21 +35,26 @@
       <div class="row bandStyle">
         <div class="col-md-8">
           <label for="bandStyle" class="control-label">Estilo:</label>
-          <input type="text" ng-model="style" placeholder="Estilo de música" class="form-control"/>
+          <input type="text" ng-model="createCtrl.band.style" placeholder="Estilo de música" class="form-control"/>
         </div>
       </div>
       <div class="row bandProvinceToPlay">
         <div class="col-md-12">
           <label for="provincesToPlay" class="control-label">Provincia:</label>
-          <input type="text" ng-model="provinces_play" placeholder="Provincias en la que estáis disponibles para tocar" class="form-control"/>
+          <input type="text" ng-model="createCtrl.band.provinces_play" placeholder="Provincias en la que estáis disponibles para tocar" class="form-control"/>
         </div>
       </div>
       <div class="row descriptionRow">
         <div class="col-md-12">
           <label for="input" class="control-label">Descripción:</label>
-          <textarea placeholder="" ng-model="description" rows="3" class="form-control"></textarea>
+          <textarea placeholder="" ng-model="createCtrl.band.description" rows="3" class="form-control"></textarea>
         </div>
       </div>
+      
+      <!-- <div> createBand is {{createBand.$valid}}</div>
+      To check if the form validate properly. Set the value to false and turns true
+      when the fields are fill -->
+
       <div class="row submitBotton">
         <div class="col-md-12">
           <button type="submit" class="btn btn-primary">Crear banda</button>

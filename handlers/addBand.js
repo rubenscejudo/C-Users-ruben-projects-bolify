@@ -16,6 +16,7 @@ function addBand (db, req, res ) {
 
 	db.collection("bands")
 		.insert(newBand)
+		
 		//.then( res.json(data) )
 		.then( () => res.sendStatus(200) )
 		.catch( () => res.sendStatus(500) )
